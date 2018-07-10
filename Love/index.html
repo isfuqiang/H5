@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Our Love Story</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+<style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #container {
+            width: 400px;
+            height: 150px;
+            border: 0px;
+        }
+        
+        #pictures {
+            width: 400px;
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #ul1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+        
+        #ul1 li {
+            float: left;
+            width: 100px;
+            height: auto;
+        }
+        
+        #ul1 li img {
+            width: 100px;
+            height: auto;
+        }
+</style>
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="container">
+        <div id="pictures">
+            <ul id="ul1">
+                <li><img src="images/1.png" alt=""></li>
+                <li><img src="images/2.png" alt=""></li>
+                <li><img src="images/3.png" alt=""></li>
+                <li><img src="images/4.png" alt=""></li>
+                <li><img src="images/5.png" alt=""></li>
+                <li><img src="images/6.png" alt=""></li>
+                <li><img src="images/7.png" alt=""></li>
+                <li><img src="images/8.png" alt=""></li>
+                <li><img src="images/9.png" alt=""></li>
+                <li><img src="images/10.png" alt=""></li>
+                <li><img src="images/11.png" alt=""></li>
+                <li><img src="images/12.png" alt=""></li>
+                <li><img src="images/13.png" alt=""></li>
+                <li><img src="images/14.png" alt=""></li>
+                <li><img src="images/15.png" alt=""></li>
+                <li><img src="images/16.png" alt=""></li>
+                <li><img src="images/17.png" alt=""></li>
+                <li><img src="images/18.png" alt=""></li>
+                <li><img src="images/19.png" alt=""></li>
+                <li><img src="images/20.png" alt=""></li>
+                <li><img src="images/21.png" alt=""></li>
+                <li><img src="images/22.png" alt=""></li>
+                <li><img src="images/23.png" alt=""></li>
+                <li><img src="images/24.png" alt=""></li>
+                <li><img src="images/25.png" alt=""></li>
+                <li><img src="images/26.png" alt=""></li>
+                <li><img src="images/27.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017-08-15.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr</span> Fu<br />
+			Girl name = <span class="keyword">Mrs</span> Yang<br />
+			<span class="comments">// Fall in love river. </span><br />
+			男孩爱着女孩;<br />
+			<span class="comments">// They love each other.</span><br />
+			女孩爱着男孩;<br />
+			<span class="comments">// AS time goes on.</span><br />
+			他们两个不能分开;<br />
+			<span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br />
+			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
+			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
+			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
+			<span class="placeholder"/>The boy has but one dream;<br />
+			<span class="comments">// The boy wants the girl could well have been happy.</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			Baby, I love you forever;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 傅先森</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script>
+        window.onload = function() {
+            var oDiv = document.getElementById("pictures");
+            var oUl = document.getElementById("ul1");
+            var speed = -3;
+            var oLi = document.getElementsByTagName("li");
+
+            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
+            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = "0";
+                }
+                oUl.style.left = oUl.offsetLeft + speed + "px";
+            }
+            var timer = setInterval(move, 30);
+            oDiv.onmouseover = function() {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout = function() {
+                timer = setInterval(move, 30);
+            };
+        }
+
+    </script>
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2017, 08, 15);
+together.setHours(24);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
